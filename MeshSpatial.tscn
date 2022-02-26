@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://MyMesh.gd" type="Script" id=1]
+[ext_resource path="res://MeshSpatial.gd" type="Script" id=2]
+
+[sub_resource type="SpatialMaterial" id=1]
+
+[node name="MeshSpatial" type="Spatial"]
+script = ExtResource( 2 )
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+material_override = SubResource( 1 )
+script = ExtResource( 1 )
