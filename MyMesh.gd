@@ -29,11 +29,13 @@ func _ready():
 	for y in range(resolution):
 		for x in range(resolution):
 			var i : int = x + y * resolution
-			var posX = (1.0 * x / (resolution - 1)) - 0.5
-			var posY = (1.0 * y / (resolution - 1)) - 0.5
+			var uvX = 1.0 * x / (resolution - 1)
+			var uvY = 1.0 * y / (resolution - 1)
+			var posX = uvX - 0.5
+			var posY = uvY - 0.5
 
 			st.add_normal(Vector3(0, 0, 1))
-			#st.add_uv(Vector2(0, 1))
+			st.add_uv(Vector2(uvX, uvY))
 			st.add_vertex(Vector3(posX, posY, 0))
 
 			if x > 0 and y > 0:
